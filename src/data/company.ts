@@ -124,6 +124,47 @@ export const sellingPoints = [
   'Proudly manufacturing aluminium products in South Africa',
 ]
 
+export type ResourceCategory = {
+  title: string
+  links: { label: string; to: string }[]
+}
+
+export const resourceCategories: ResourceCategory[] = [
+  {
+    title: 'Homeowners',
+    links: [
+      { label: 'Request a Free Quote', to: '/contact' },
+      { label: 'Browse Our Services', to: '/services' },
+      { label: 'View Before & After Gallery', to: '/gallery' },
+      { label: 'Glass & Aluminium Solutions', to: '/services#glass-aluminium' },
+    ],
+  },
+  {
+    title: 'Businesses & Shopfronts',
+    links: [
+      { label: 'Same-Day Shopfront Glass Repairs', to: '/services#glass-aluminium' },
+      { label: 'Security Gates & Trellis Gates', to: '/services#security-gates' },
+      { label: 'Request a Free Quote', to: '/contact' },
+    ],
+  },
+  {
+    title: 'Property Managers',
+    links: [
+      { label: 'Building Renovations & Extensions', to: '/services#building-renovations' },
+      { label: 'Roofing & Repairs', to: '/services#roofing' },
+      { label: 'Plumbing Installations & Repairs', to: '/services#plumbing' },
+    ],
+  },
+  {
+    title: 'New Builds',
+    links: [
+      { label: 'Concept to Completion', to: '/services#building-renovations' },
+      { label: 'Tiling, Paving & Flooring', to: '/services#tiling-paving-flooring' },
+      { label: 'Painting & Finishing', to: '/services#painting' },
+    ],
+  },
+]
+
 export type GalleryImage = {
   src: string
   category: string
