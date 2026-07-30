@@ -27,16 +27,29 @@ function Home() {
   return (
     <div className="page-home">
       <section className="hero">
-        <div className="container hero-inner">
-          <p className="eyebrow">Serving {company.area}</p>
-          <h1>{company.tagline}</h1>
-          <p className="hero-sub">{company.subTagline}</p>
-          <div className="hero-actions">
-            <Link to="/contact" className="btn btn-primary">Get a Free Quote</Link>
-            <Link to="/about" className="btn btn-outline">Who We Are</Link>
+        <div className="hero-top">
+          <div className="container hero-inner">
+            <div className="hero-copy">
+              <p className="eyebrow">Serving {company.area}</p>
+              <h1>{company.tagline}</h1>
+            </div>
+            <div className="hero-side">
+              <p className="hero-sub">{company.subTagline}</p>
+              <Link to="/about" className="btn btn-outline hero-who-btn">Who We Are</Link>
+            </div>
           </div>
+          <div className="hero-arc" />
         </div>
-        <div className="hero-diagonal" />
+        <div className="hero-photo-wrap">
+          <img
+            className="hero-photo"
+            src={asset('/images/renovations/house-under-construction.jpg')}
+            alt="KB Projects team at work on a renovation"
+          />
+        </div>
+        <div className="container hero-cta-row">
+          <Link to="/contact" className="btn btn-primary">Get a Free Quote</Link>
+        </div>
       </section>
 
       <section className="selling-points section-alt">
