@@ -1,11 +1,10 @@
 import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import { company, services, sellingPoints, siteStats, resourceCategories, faqs } from '../data/company'
+import { company, services, sellingPoints, siteStats, resourceCategories } from '../data/company'
 import Reveal from '../components/Reveal'
 import StatCounter from '../components/StatCounter'
 import Accordion from '../components/Accordion'
 import SpotlightSlider from '../components/SpotlightSlider'
-import Faq from '../components/Faq'
 import { asset } from '../lib/asset'
 import './Home.css'
 
@@ -342,18 +341,6 @@ function Home() {
           <div className="showcase-cta">
             <Link to="/gallery" className="btn btn-dark">See Full Gallery</Link>
           </div>
-        </div>
-      </section>
-
-      <section className="faq-section section-alt">
-        <div className="container">
-          <Reveal className="faq-heading">
-            <p className="eyebrow">FAQ</p>
-            <h2>Frequently Asked Questions</h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <Faq items={faqs} />
-          </Reveal>
         </div>
       </section>
 

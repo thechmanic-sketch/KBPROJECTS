@@ -1,0 +1,20 @@
+.faq-hero {
+  padding: 90px 0 60px;
+}
+
+.faq-hero p {
+  color: #d8d8d8;
+  margin-top: 10px;
+  max-width: 600px;
+}
+
+.faq-cta {
+  text-align: center;
+}
+
+.faq-cta .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
