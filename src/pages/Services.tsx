@@ -1,8 +1,17 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { services, company } from '../data/company'
 import './Services.css'
 
 function Services() {
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (!hash) return
+    const target = document.getElementById(hash.slice(1))
+    target?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [hash])
+
   return (
     <div className="page-services">
       <section className="services-hero section-dark">
