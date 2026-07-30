@@ -1,0 +1,40 @@
+.spotlight-slider {
+  width: 100%;
+}
+
+.spotlight-dots {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .spotlight-track {
+    scrollbar-width: none;
+  }
+
+  .spotlight-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .spotlight-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .spotlight-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .spotlight-dot.active {
+    background: var(--color-orange);
+    transform: scale(1.2);
+  }
+}

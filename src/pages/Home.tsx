@@ -3,6 +3,7 @@ import { company, services, sellingPoints, siteStats, resourceCategories } from 
 import Reveal from '../components/Reveal'
 import StatCounter from '../components/StatCounter'
 import Accordion from '../components/Accordion'
+import SpotlightSlider from '../components/SpotlightSlider'
 import { asset } from '../lib/asset'
 import './Home.css'
 
@@ -178,17 +179,19 @@ function Home() {
             <p className="eyebrow">Featured Work</p>
             <h2>KB Projects, One Completed Job at a Time</h2>
           </Reveal>
-          <Reveal as="div" className="spotlight-track" stagger delay={0.1}>
-            {projectSpotlights.map((item) => (
-              <Link to="/gallery" className="spotlight-card" key={item.title}>
-                <img src={asset(item.image)} alt={item.title} />
-                <span className="spotlight-view">View Project</span>
-                <div className="spotlight-caption">
-                  <h3>{item.title}</h3>
-                  <p>{item.category}</p>
-                </div>
-              </Link>
-            ))}
+          <Reveal delay={0.1}>
+            <SpotlightSlider>
+              {projectSpotlights.map((item) => (
+                <Link to="/gallery" className="spotlight-card" key={item.title}>
+                  <img src={asset(item.image)} alt={item.title} />
+                  <span className="spotlight-view">View Project</span>
+                  <div className="spotlight-caption">
+                    <h3>{item.title}</h3>
+                    <p>{item.category}</p>
+                  </div>
+                </Link>
+              ))}
+            </SpotlightSlider>
           </Reveal>
         </div>
       </section>
