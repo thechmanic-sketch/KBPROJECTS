@@ -52,39 +52,6 @@ function Home() {
         </div>
       </section>
 
-      <section className="selling-points section-alt">
-        <div className="container">
-          <Reveal as="div" className="points-grid" stagger>
-            {sellingPoints.map((point) => (
-              <div className="point-card" key={point}>
-                <span className="point-check">✓</span>
-                <span>{point}</span>
-              </div>
-            ))}
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="services-preview">
-        <div className="container">
-          <Reveal>
-            <p className="eyebrow">What We Do</p>
-            <h2>One Team. Endless Solutions.</h2>
-          </Reveal>
-          <Reveal as="div" className="services-grid" stagger delay={0.1}>
-            {services.map((service) => (
-              <Link to={`/services#${service.slug}`} className="service-card" key={service.slug}>
-                <img src={asset(service.image)} alt={service.name} />
-                <div className="service-card-body">
-                  <h3>{service.name}</h3>
-                  <p>{service.shortDescription}</p>
-                </div>
-              </Link>
-            ))}
-          </Reveal>
-        </div>
-      </section>
-
       <section className="difference">
         <div className="container difference-rail">
           <Reveal as="div" className="difference-announcement">
@@ -144,6 +111,39 @@ function Home() {
             <span />
             <span />
           </div>
+        </div>
+      </section>
+
+      <section className="selling-points section-alt">
+        <div className="container">
+          <Reveal as="div" className="points-grid" stagger>
+            {sellingPoints.map((point) => (
+              <div className="point-card" key={point}>
+                <span className="point-check">✓</span>
+                <span>{point}</span>
+              </div>
+            ))}
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="services-preview">
+        <div className="container">
+          <Reveal>
+            <p className="eyebrow">What We Do</p>
+            <h2>One Team. Endless Solutions.</h2>
+          </Reveal>
+          <Reveal as="div" className="services-grid" stagger delay={0.1}>
+            {services.map((service) => (
+              <Link to={`/services#${service.slug}`} className="service-card" key={service.slug}>
+                <img src={asset(service.image)} alt={service.name} />
+                <div className="service-card-body">
+                  <h3>{service.name}</h3>
+                  <p>{service.shortDescription}</p>
+                </div>
+              </Link>
+            ))}
+          </Reveal>
         </div>
       </section>
 
