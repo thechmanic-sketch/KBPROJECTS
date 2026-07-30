@@ -1,4 +1,5 @@
 import { company, sellingPoints } from '../data/company'
+import { asset } from '../lib/asset'
 import './About.css'
 
 function About() {
@@ -19,7 +20,7 @@ function About() {
       <section>
         <div className="container about-grid">
           <img
-            src="/images/renovations/house-exterior-white.jpg"
+            src={asset('/images/renovations/house-exterior-white.jpg')}
             alt="Completed renovation by KB Projects"
             className="about-image"
           />

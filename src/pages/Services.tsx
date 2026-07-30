@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { services, company } from '../data/company'
+import { asset } from '../lib/asset'
 import './Services.css'
 
 function Services() {
@@ -30,7 +31,7 @@ function Services() {
         >
           <div className="container service-detail-grid">
             <img
-              src={service.image}
+              src={asset(service.image)}
               alt={service.name}
               className={index % 2 === 1 ? 'service-detail-image order-2' : 'service-detail-image'}
             />

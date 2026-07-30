@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import { company } from '../data/company'
+import { asset } from '../lib/asset'
 import './Layout.css'
 
 const navLinks = [
@@ -15,7 +16,7 @@ function Layout() {
     <div className="site">
       <header className="site-header">
         <NavLink to="/" className="brand" end>
-          <img src="/images/brand/kb-logo.png" alt={company.name} className="brand-logo" />
+          <img src={asset('/images/brand/kb-logo.png')} alt={company.name} className="brand-logo" />
         </NavLink>
         <nav className="site-nav">
           {navLinks.map((link) => (
@@ -40,7 +41,7 @@ function Layout() {
 
       <footer className="site-footer">
         <div className="footer-brand">
-          <img src="/images/brand/kb-logo.png" alt={company.name} className="footer-logo" />
+          <img src={asset('/images/brand/kb-logo.png')} alt={company.name} className="footer-logo" />
         </div>
         <p>{company.subTagline}</p>
         <div className="footer-contact">

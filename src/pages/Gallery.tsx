@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { galleryImages } from '../data/company'
+import { asset } from '../lib/asset'
 import './Gallery.css'
 
 function Gallery() {
@@ -40,7 +41,7 @@ function Gallery() {
           <div className="gallery-grid">
             {filtered.map((img) => (
               <figure className="gallery-item" key={img.src}>
-                <img src={img.src} alt={img.label} loading="lazy" />
+                <img src={asset(img.src)} alt={img.label} loading="lazy" />
                 <figcaption>{img.label}</figcaption>
               </figure>
             ))}

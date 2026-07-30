@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { company, services, sellingPoints, siteStats } from '../data/company'
 import Reveal from '../components/Reveal'
 import StatCounter from '../components/StatCounter'
+import { asset } from '../lib/asset'
 import './Home.css'
 
 const beforeAfterShowcase = [
@@ -60,7 +61,7 @@ function Home() {
           <Reveal as="div" className="services-grid" stagger delay={0.1}>
             {services.map((service) => (
               <Link to={`/services#${service.slug}`} className="service-card" key={service.slug}>
-                <img src={service.image} alt={service.name} />
+                <img src={asset(service.image)} alt={service.name} />
                 <div className="service-card-body">
                   <h3>{service.name}</h3>
                   <p>{service.shortDescription}</p>
@@ -96,8 +97,8 @@ function Home() {
             {beforeAfterShowcase.map((item) => (
               <div className="showcase-card" key={item.label}>
                 <div className="showcase-images">
-                  <img src={item.before} alt={`${item.label} before`} />
-                  <img src={item.after} alt={`${item.label} after`} />
+                  <img src={asset(item.before)} alt={`${item.label} before`} />
+                  <img src={asset(item.after)} alt={`${item.label} after`} />
                 </div>
                 <p className="showcase-label">{item.label}</p>
               </div>
