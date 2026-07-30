@@ -85,18 +85,65 @@ function Home() {
         </div>
       </section>
 
-      <section className="stats-band section-dark">
-        <div className="stats-shape" />
-        <div className="container stats-inner">
-          <Reveal>
-            <p className="eyebrow">The KB Difference</p>
-            <h2>Quality Workmanship You Can Trust</h2>
+      <section className="difference">
+        <div className="container difference-rail">
+          <Reveal as="div" className="difference-announcement">
+            <p className="eyebrow">Available Now</p>
+            <h2>Free Quotes on Every Project</h2>
+            <div className="difference-announcement-body">
+              <img
+                src={asset('/images/roofing/team-on-roof.jpg')}
+                alt="KB Projects team on site"
+                className="announcement-img"
+              />
+              <div>
+                <p>
+                  With years of hands-on experience across glass &amp; aluminium, renovations, and
+                  general building, KB Projects brings every trade under one roof so you never have
+                  to juggle multiple contractors.
+                </p>
+                <p>
+                  <strong>Same-Day Glass Repairs</strong> &mdash; most breakages and shopfront glazing
+                  jobs are handled the same day you call.{' '}
+                  <Link to="/services#glass-aluminium">Learn More</Link>
+                </p>
+                <p>
+                  <strong>Full Renovation Projects</strong> &mdash; from concept to completion, one
+                  team manages the whole build.{' '}
+                  <Link to="/services#building-renovations">Learn More</Link>
+                </p>
+                <Link to="/contact" className="btn btn-outline btn-sm">Contact Us</Link>
+              </div>
+            </div>
           </Reveal>
-          <Reveal as="div" className="stats-grid" stagger delay={0.1}>
-            {siteStats.map((stat) => (
-              <StatCounter key={stat.label} value={stat.value} suffix={stat.suffix} label={stat.label} />
-            ))}
+
+          <Reveal as="div" className="difference-numbers" delay={0.1}>
+            <p className="eyebrow">In Numbers</p>
+            <h2>The KB Difference</h2>
+            <div className="difference-highlight">
+              <div className="difference-highlight-stat">
+                <StatCounter value={siteStats[0].value} suffix={siteStats[0].suffix} label={siteStats[0].label} />
+                <Link to="/services">Core Services &rarr;</Link>
+              </div>
+              <img
+                src={asset('/images/renovations/house-under-construction.jpg')}
+                alt="KB Projects renovation project"
+                className="difference-photo"
+              />
+            </div>
+            <div className="difference-row">
+              {siteStats.slice(1).map((stat) => (
+                <StatCounter key={stat.label} value={stat.value} suffix={stat.suffix} label={stat.label} />
+              ))}
+            </div>
           </Reveal>
+
+          <div className="difference-shape" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
         </div>
       </section>
 
