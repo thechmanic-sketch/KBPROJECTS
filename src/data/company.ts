@@ -165,6 +165,43 @@ export const resourceCategories: ResourceCategory[] = [
   },
 ]
 
+export type Faq = {
+  question: string
+  answer: string
+}
+
+export const faqs: Faq[] = [
+  {
+    question: 'Do you offer free quotes?',
+    answer:
+      'Yes. Every quote is free and no-obligation, whether it’s a small glass repair or a full renovation. Contact us and we’ll arrange a site visit or callout as needed.',
+  },
+  {
+    question: 'What areas do you service?',
+    answer: `We proudly service ${company.area} and surrounding areas.`,
+  },
+  {
+    question: 'How quickly can you fix a broken window or shopfront?',
+    answer:
+      'Most glass and shopfront repairs are handled the same day you call, so you can get back to business or feel secure at home as quickly as possible.',
+  },
+  {
+    question: 'Can KB Projects manage a full renovation from start to finish?',
+    answer:
+      'Yes. From concept and design through structural work, finishes, and final handover, our team manages the whole build so you don’t need to juggle multiple contractors.',
+  },
+  {
+    question: 'Are your aluminium products manufactured locally?',
+    answer:
+      'Yes, our aluminium windows, doors, and enclosures are proudly manufactured in South Africa and built to last.',
+  },
+  {
+    question: 'Do you charge hidden fees?',
+    answer:
+      'No. We believe in honest, upfront pricing — the quote you receive is the price you pay, with no hidden fees.',
+  },
+]
+
 export type GalleryImage = {
   src: string
   category: string
