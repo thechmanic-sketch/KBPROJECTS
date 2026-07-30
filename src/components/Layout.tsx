@@ -15,8 +15,7 @@ function Layout() {
     <div className="site">
       <header className="site-header">
         <NavLink to="/" className="brand" end>
-          <span className="brand-kb">KB</span>
-          <span className="brand-projects">PROJECTS</span>
+          <img src="/images/brand/kb-logo.png" alt={company.name} className="brand-logo" />
         </NavLink>
         <nav className="site-nav">
           {navLinks.map((link) => (
@@ -41,8 +40,7 @@ function Layout() {
 
       <footer className="site-footer">
         <div className="footer-brand">
-          <span className="brand-kb">KB</span>
-          <span className="brand-projects">PROJECTS</span>
+          <img src="/images/brand/kb-logo.png" alt={company.name} className="footer-logo" />
         </div>
         <p>{company.subTagline}</p>
         <div className="footer-contact">

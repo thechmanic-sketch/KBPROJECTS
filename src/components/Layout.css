@@ -19,20 +19,12 @@
 
 .brand {
   display: flex;
-  align-items: baseline;
-  gap: 6px;
-  font-weight: 900;
-  font-size: 1.4rem;
+  align-items: center;
 }
 
-.brand-kb {
-  color: var(--color-orange);
-}
-
-.brand-projects {
-  color: var(--color-black);
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
+.brand-logo {
+  height: 48px;
+  width: auto;
 }
 
 .site-nav {
@@ -73,14 +65,15 @@
 .footer-brand {
   display: flex;
   justify-content: center;
-  gap: 6px;
-  font-weight: 900;
-  font-size: 1.6rem;
   margin-bottom: 8px;
 }
 
-.footer-brand .brand-projects {
-  color: var(--color-white);
+.footer-logo {
+  height: 64px;
+  width: auto;
+  border-radius: 50%;
+  background: var(--color-white);
+  padding: 4px;
 }
 
 .footer-contact {

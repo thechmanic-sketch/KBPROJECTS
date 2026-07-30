@@ -1,10 +1,13 @@
 :root {
   --color-orange: #f2600c;
-  --color-black: #14171a;
-  --color-charcoal: #1f2327;
+  --color-orange-dark: #d14e05;
+  --color-black: #12161c;
+  --color-charcoal: #1a1f27;
+  --color-charcoal-light: #232a35;
   --color-white: #ffffff;
-  --color-offwhite: #f4f5f6;
-  --color-grey: #6b7278;
+  --color-offwhite: #f7f5f2;
+  --color-grey: #8b939b;
+  --color-text-dark: #1a1d21;
   --radius: 10px;
   --max-width: 1200px;
   color-scheme: light;

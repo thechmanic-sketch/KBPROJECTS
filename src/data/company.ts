@@ -8,6 +8,19 @@ export const company = {
   subTagline: 'Quality workmanship. Reliable service. Exceptional results.',
 }
 
+export type SiteStat = {
+  value: number
+  suffix: string
+  label: string
+}
+
+export const siteStats: SiteStat[] = [
+  { value: 8, suffix: '', label: 'Core Service Categories' },
+  { value: 100, suffix: '%', label: 'Free, No-Obligation Quotes' },
+  { value: 1, suffix: '', label: 'Team, Endless Solutions' },
+  { value: 0, suffix: '', label: 'Hidden Fees — Ever' },
+]
+
 export type ServiceCategory = {
   slug: string
   name: string
