@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { company, services, sellingPoints, siteStats, resourceCategories } from '../data/company'
 import Reveal from '../components/Reveal'
@@ -22,6 +23,42 @@ const projectSpotlights = [
     image: '/images/security-gates/trellis-gate-patio.jpg',
     title: 'Patio Security Upgrade',
     category: 'Security & Trellis Gates',
+  },
+]
+
+const featuredHighlights = [
+  {
+    tag: 'Same-Day Service',
+    title: 'Fast Glass & Aluminium Repairs',
+    to: '/services#glass-aluminium',
+  },
+  {
+    tag: 'Full Service',
+    title: 'Concept-to-Completion Renovations',
+    to: '/services#building-renovations',
+  },
+]
+
+const latestUpdates = [
+  {
+    image: '/images/glass-aluminium/shopfronts/shopfront-after-repaired.jpg',
+    tag: 'Glass & Aluminium',
+    title: 'Shopfront Glazing Repaired and Reopened Same Day',
+  },
+  {
+    image: '/images/renovations/house-under-construction.jpg',
+    tag: 'Building Renovations',
+    title: 'Double-Storey Renovation Nearing Completion',
+  },
+  {
+    image: '/images/showers/bathroom-shower-vanity.jpg',
+    tag: 'Shower Solutions',
+    title: 'Frameless Shower & Vanity Installation Complete',
+  },
+  {
+    image: '/images/plumbing/jojo-tank-installed.jpg',
+    tag: 'Plumbing',
+    title: 'JoJo Water Tank Installed for New Client',
   },
 ]
 
@@ -193,6 +230,61 @@ function Home() {
               ))}
             </SpotlightSlider>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="impact">
+        <div className="container impact-inner">
+          <Reveal className="impact-copy">
+            <h2>Ready to Start Your Project?</h2>
+            <p>
+              We are committed to serving every client across {company.area} with safe, reliable and
+              high-quality workmanship. Whether it's a same-day repair or a full renovation, your
+              project matters to us.
+            </p>
+          </Reveal>
+          <Link to="/contact" className="btn btn-dark impact-cta">Get a Free Quote</Link>
+        </div>
+      </section>
+
+      <section className="highlights">
+        <div className="container">
+          <Reveal as="div" className="highlights-box">
+            <div className="highlights-intro">
+              <h2>Featured Highlights</h2>
+              <Link to="/services">&rarr; Explore All Services</Link>
+            </div>
+            {featuredHighlights.map((item) => (
+              <Fragment key={item.title}>
+                <span className="highlights-divider" aria-hidden="true" />
+                <div className="highlights-item">
+                  <span className="highlights-tag">{item.tag}</span>
+                  <Link to={item.to}>{item.title}</Link>
+                </div>
+              </Fragment>
+            ))}
+          </Reveal>
+
+          <div className="news-row">
+            <div className="news-blocks" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </div>
+            <div className="news-intro">
+              <h2>KB Projects Latest Updates</h2>
+              <Link to="/gallery">&rarr; Explore Full Gallery</Link>
+            </div>
+            <Reveal as="div" className="news-grid" stagger delay={0.1}>
+              {latestUpdates.map((item) => (
+                <Link to="/gallery" className="news-card" key={item.title}>
+                  <img src={asset(item.image)} alt={item.title} />
+                  <span className="news-tag">{item.tag}</span>
+                  <p>{item.title}</p>
+                </Link>
+              ))}
+            </Reveal>
+          </div>
         </div>
       </section>
 
