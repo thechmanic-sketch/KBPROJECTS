@@ -1,0 +1,17 @@
+.stat-counter {
+  text-align: left;
+  border-left: 3px solid var(--color-orange);
+  padding-left: 18px;
+}
+
+.stat-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--color-orange);
+}
+
+.stat-label {
+  color: var(--color-grey);
+  font-weight: 600;
+  margin-top: 4px;
+}

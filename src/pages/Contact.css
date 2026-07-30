@@ -1,12 +1,3 @@
-.contact-hero {
-  padding: 90px 0 60px;
-}
-
-.contact-hero p {
-  color: #d8d8d8;
-  margin-top: 10px;
-}
-
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -19,6 +10,36 @@
 
 .contact-details a:hover {
   color: var(--color-orange);
+}
+
+.contact-why {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-why li {
+  font-weight: 600;
+  padding-left: 18px;
+  position: relative;
+}
+
+.contact-why li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-orange);
+  font-weight: 800;
+}
+
+.contact-faq-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--color-orange);
+  font-weight: 700;
 }
 
 .contact-form {

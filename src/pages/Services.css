@@ -1,13 +1,3 @@
-.services-hero {
-  padding: 90px 0 60px;
-}
-
-.services-hero p {
-  color: #d8d8d8;
-  margin-top: 12px;
-  max-width: 600px;
-}
-
 .service-detail-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

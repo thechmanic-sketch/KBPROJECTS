@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
-import { galleryImages } from '../data/company'
+import { galleryImages, company } from '../data/company'
+import PageHero from '../components/PageHero'
 import { asset } from '../lib/asset'
 import './Gallery.css'
 
@@ -15,13 +16,14 @@ function Gallery() {
 
   return (
     <div className="page-gallery">
-      <section className="gallery-hero section-dark">
-        <div className="container">
-          <p className="eyebrow">Our Work</p>
-          <h1>Gallery</h1>
-          <p>Real before &amp; after projects from around KZN.</p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Work"
+        title="Gallery"
+        description={`Real before & after projects from around ${company.area}. Filter by category to see the work most relevant to you.`}
+        photo="/images/glass-aluminium/shopfronts/shopfront-after-repaired.jpg"
+        photoAlt="Completed shopfront glazing project"
+        secondaryCta={{ label: 'Request a Free Quote', to: '/contact' }}
+      />
 
       <section>
         <div className="container">

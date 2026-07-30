@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import { company, services } from '../data/company'
+import { Link } from 'react-router-dom'
+import { company, services, sellingPoints } from '../data/company'
+import PageHero from '../components/PageHero'
 import './Contact.css'
 
 function Contact() {
@@ -12,13 +14,13 @@ function Contact() {
 
   return (
     <div className="page-contact">
-      <section className="contact-hero section-dark">
-        <div className="container">
-          <p className="eyebrow">Get In Touch</p>
-          <h1>Let's Start Your Project</h1>
-          <p>Free quotes. No hidden fees. Reach out and we'll get back to you shortly.</p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Get In Touch"
+        title="Let's Start Your Project"
+        description="Free quotes. No hidden fees. Reach out and we'll get back to you shortly."
+        photo="/images/renovations/house-under-construction.jpg"
+        photoAlt="KB Projects team on a renovation site"
+      />
 
       <section>
         <div className="container contact-grid">
@@ -34,6 +36,12 @@ function Contact() {
             <p>
               <strong>Service Area:</strong> {company.area}
             </p>
+            <ul className="contact-why">
+              {sellingPoints.slice(0, 4).map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+            <Link to="/faq" className="contact-faq-link">Have a question? Check our FAQ &rarr;</Link>
           </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>

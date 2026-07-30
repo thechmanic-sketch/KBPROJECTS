@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { services, company } from '../data/company'
+import Reveal from '../components/Reveal'
+import PageHero from '../components/PageHero'
 import { asset } from '../lib/asset'
 import './Services.css'
 
@@ -15,13 +17,14 @@ function Services() {
 
   return (
     <div className="page-services">
-      <section className="services-hero section-dark">
-        <div className="container">
-          <p className="eyebrow">Our Services</p>
-          <h1>One Team. Endless Solutions.</h1>
-          <p>Your one-stop solution for all building and renovation needs across {company.area}.</p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Services"
+        title="One Team. Endless Solutions."
+        description={`Your one-stop solution for all building and renovation needs across ${company.area}. Explore our full range of services below.`}
+        photo="/images/glass-aluminium/doors-enclosures/bifold-doors-pool.jpg"
+        photoAlt="KB Projects bifold doors installation"
+        primaryCta={{ label: 'Get a Free Quote', to: '/contact' }}
+      />
 
       {services.map((service, index) => (
         <section
@@ -30,12 +33,14 @@ function Services() {
           className={index % 2 === 1 ? 'service-detail section-alt' : 'service-detail'}
         >
           <div className="container service-detail-grid">
-            <img
-              src={asset(service.image)}
-              alt={service.name}
-              className={index % 2 === 1 ? 'service-detail-image order-2' : 'service-detail-image'}
-            />
-            <div>
+            <Reveal as="div" className={index % 2 === 1 ? 'order-2' : undefined}>
+              <img
+                src={asset(service.image)}
+                alt={service.name}
+                className="service-detail-image"
+              />
+            </Reveal>
+            <Reveal as="div" delay={0.1}>
               <h2>{service.name}</h2>
               <p className="service-detail-desc">{service.description}</p>
               <ul>
@@ -43,14 +48,18 @@ function Services() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </div>
+              <Link to="/gallery" className="btn btn-outline btn-sm">See Related Projects</Link>
+            </Reveal>
           </div>
         </section>
       ))}
 
       <section className="section-dark services-cta">
         <div className="container">
-          <h2>Not sure which service you need?</h2>
+          <Reveal>
+            <h2>Not sure which service you need?</h2>
+            <p>Contact us and we'll help you find the right solution for your project.</p>
+          </Reveal>
           <Link to="/contact" className="btn btn-primary">Get a Free Quote</Link>
         </div>
       </section>

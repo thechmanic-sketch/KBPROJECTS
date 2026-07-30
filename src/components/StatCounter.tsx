@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from '../lib/gsap'
+import './StatCounter.css'
 
 type StatCounterProps = {
   value: number
