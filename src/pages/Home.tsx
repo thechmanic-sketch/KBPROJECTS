@@ -115,6 +115,45 @@ function Home() {
         </div>
       </section>
 
+      <section className="resources">
+        <div className="resources-top">
+          <div className="container resources-top-inner">
+            <Reveal className="resources-copy">
+              <p className="eyebrow">Insights</p>
+              <h2>Resources For Your Project</h2>
+              <p>
+                KB Projects is committed to serving clients of every size across {company.area} with
+                rigorous, reliable building and renovation solutions. Click a category below to
+                quickly find the services and information most relevant to you.
+              </p>
+            </Reveal>
+          </div>
+          <div className="resources-photo-wrap">
+            <img
+              src={asset('/images/glass-aluminium/doors-enclosures/bifold-doors-pool.jpg')}
+              alt="KB Projects aluminium and glazing work"
+              className="resources-photo"
+            />
+          </div>
+        </div>
+
+        <div className="resources-bottom section-alt">
+          <div className="container resources-bottom-inner">
+            <Reveal as="div" className="resources-accordion-col">
+              <Accordion items={resourceCategories} />
+            </Reveal>
+            <Reveal as="div" className="resources-side-col" delay={0.1}>
+              <p>
+                KB Projects can help provide a complete solution for your property &mdash; from
+                initial quote and design through to installation and aftercare. These services can be
+                tailored to fit projects of any size, residential or commercial.
+              </p>
+              <Link to="/contact" className="btn btn-outline btn-sm">Learn More</Link>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       <section className="selling-points section-alt">
         <div className="container">
           <Reveal as="div" className="points-grid" stagger>
@@ -167,45 +206,6 @@ function Home() {
           </Reveal>
           <div className="showcase-cta">
             <Link to="/gallery" className="btn btn-dark">See Full Gallery</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="resources">
-        <div className="resources-top">
-          <div className="container resources-top-inner">
-            <Reveal className="resources-copy">
-              <p className="eyebrow">Insights</p>
-              <h2>Resources For Your Project</h2>
-              <p>
-                KB Projects is committed to serving clients of every size across {company.area} with
-                rigorous, reliable building and renovation solutions. Click a category below to
-                quickly find the services and information most relevant to you.
-              </p>
-            </Reveal>
-          </div>
-          <div className="resources-photo-wrap">
-            <img
-              src={asset('/images/glass-aluminium/doors-enclosures/bifold-doors-pool.jpg')}
-              alt="KB Projects aluminium and glazing work"
-              className="resources-photo"
-            />
-          </div>
-        </div>
-
-        <div className="resources-bottom section-alt">
-          <div className="container resources-bottom-inner">
-            <Reveal as="div" className="resources-accordion-col">
-              <Accordion items={resourceCategories} />
-            </Reveal>
-            <Reveal as="div" className="resources-side-col" delay={0.1}>
-              <p>
-                KB Projects can help provide a complete solution for your property &mdash; from
-                initial quote and design through to installation and aftercare. These services can be
-                tailored to fit projects of any size, residential or commercial.
-              </p>
-              <Link to="/contact" className="btn btn-outline btn-sm">Learn More</Link>
-            </Reveal>
           </div>
         </div>
       </section>
