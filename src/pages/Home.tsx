@@ -6,6 +6,24 @@ import Accordion from '../components/Accordion'
 import { asset } from '../lib/asset'
 import './Home.css'
 
+const projectSpotlights = [
+  {
+    image: '/images/glass-aluminium/doors-enclosures/enclosure-sea-view.jpg',
+    title: 'Sea View Glass Enclosure',
+    category: 'Glass & Aluminium',
+  },
+  {
+    image: '/images/bathrooms/bathroom-after.jpg',
+    title: 'Full Bathroom Renovation',
+    category: 'Building Renovations',
+  },
+  {
+    image: '/images/security-gates/trellis-gate-patio.jpg',
+    title: 'Patio Security Upgrade',
+    category: 'Security & Trellis Gates',
+  },
+]
+
 const beforeAfterShowcase = [
   {
     before: '/images/glass-aluminium/shopfronts/shopfront-before-broken.jpg',
@@ -151,6 +169,27 @@ function Home() {
               <Link to="/contact" className="btn btn-outline btn-sm">Learn More</Link>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      <section className="spotlight section-dark">
+        <div className="container">
+          <Reveal>
+            <p className="eyebrow">Featured Work</p>
+            <h2>KB Projects, One Completed Job at a Time</h2>
+          </Reveal>
+          <Reveal as="div" className="spotlight-track" stagger delay={0.1}>
+            {projectSpotlights.map((item) => (
+              <Link to="/gallery" className="spotlight-card" key={item.title}>
+                <img src={asset(item.image)} alt={item.title} />
+                <span className="spotlight-view">View Project</span>
+                <div className="spotlight-caption">
+                  <h3>{item.title}</h3>
+                  <p>{item.category}</p>
+                </div>
+              </Link>
+            ))}
+          </Reveal>
         </div>
       </section>
 

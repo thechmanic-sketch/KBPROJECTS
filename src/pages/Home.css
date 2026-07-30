@@ -485,3 +485,94 @@
     padding-left: 0;
   }
 }
+
+.spotlight h2 {
+  font-size: 2rem;
+  max-width: 640px;
+  margin: 8px 0 40px;
+}
+
+.spotlight-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.spotlight-card {
+  position: relative;
+  display: block;
+  height: 340px;
+  border-radius: 4px;
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.spotlight-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.spotlight-card:hover img {
+  transform: scale(1.05);
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: var(--color-orange);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  z-index: 2;
+}
+
+.spotlight-view {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.spotlight-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+}
+
+.spotlight-caption h3 {
+  font-size: 1.1rem;
+  margin: 0 0 4px;
+}
+
+.spotlight-caption p {
+  font-size: 0.85rem;
+  color: #d3d6da;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .spotlight-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    margin: 0 -24px;
+    padding: 4px 24px 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .spotlight-card {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+  }
+}
