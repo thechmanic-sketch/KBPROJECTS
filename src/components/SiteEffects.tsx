@@ -8,6 +8,8 @@ const TILT_SELECTOR =
 
 function SiteEffects() {
   useEffect(() => {
+    if (window.matchMedia('(pointer: coarse)').matches) return
+
     const lenis = new Lenis({
       duration: 1.1,
       easing: (t: number) => Math.min(1, 1 - Math.pow(2, -10 * t)),
