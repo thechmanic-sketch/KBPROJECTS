@@ -318,6 +318,30 @@ function Home() {
         </div>
       </section>
 
+      <section className="flyer-promo">
+        <div className="container flyer-promo-inner">
+          <Reveal as="div" className="flyer-promo-image">
+            <img
+              src={asset('/images/flyers/flyer-aluminium-windows-doors.jpg')}
+              alt="KB Projects aluminium windows and doors product range"
+            />
+          </Reveal>
+          <Reveal as="div" className="flyer-promo-copy" delay={0.1}>
+            <p className="eyebrow">Our Products</p>
+            <h2>Aluminium Windows &amp; Doors, Proudly Made in South Africa</h2>
+            <p>
+              From tophung windows to full shopfront glazing, every product is manufactured
+              locally and built to last &mdash; browse our full product range or get a free
+              quote for your project.
+            </p>
+            <div className="flyer-promo-actions">
+              <Link to="/products" className="btn btn-primary">View All Products</Link>
+              <Link to="/contact" className="btn btn-outline">Get a Free Quote</Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="showcase section-alt">
         <div className="container">
           <Reveal>

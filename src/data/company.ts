@@ -202,6 +202,136 @@ export const faqs: Faq[] = [
   },
 ]
 
+export type Product = {
+  slug: string
+  name: string
+  category: string
+  description: string
+  features: string[]
+  image: string
+}
+
+export const products: Product[] = [
+  {
+    slug: 'aluminium-windows',
+    name: 'Aluminium Windows',
+    category: 'Glass & Aluminium',
+    description: 'Custom aluminium windows manufactured in South Africa, built for durability and a clean modern finish.',
+    features: ['Tophung windows', 'Side-hung windows', 'Corner windows', 'Custom sizes to order'],
+    image: '/images/glass-aluminium/windows/tophung-window-brick.jpg',
+  },
+  {
+    slug: 'aluminium-doors',
+    name: 'Aluminium Doors',
+    category: 'Glass & Aluminium',
+    description: 'Sliding, folding and entrance doors that open up your living and entertainment spaces.',
+    features: ['Bifold/stacking doors', 'Sliding doors', 'Entrance doors', 'Smooth-glide hardware'],
+    image: '/images/glass-aluminium/doors-enclosures/bifold-doors-patio.jpg',
+  },
+  {
+    slug: 'shopfronts-stackdoors',
+    name: 'Shopfronts & Stackdoors',
+    category: 'Glass & Aluminium',
+    description: 'Same-day glass replacement and custom shopfront glazing to keep your business open and secure.',
+    features: ['Same-day repairs', 'Shopfront glazing', 'Stackdoors', 'Safety glass options'],
+    image: '/images/glass-aluminium/shopfronts/shopfront-after-repaired.jpg',
+  },
+  {
+    slug: 'frameless-showers',
+    name: 'Frameless Showers',
+    category: 'Shower Solutions',
+    description: 'Sleek frameless glass shower enclosures custom-tailored to your bathroom.',
+    features: ['Frameless glass panels', 'Custom shower designs', 'Toughened safety glass', 'Made to measure'],
+    image: '/images/showers/frameless-shower-bedroom.jpg',
+  },
+  {
+    slug: 'trellis-security-gates',
+    name: 'Trellis & Security Gates',
+    category: 'Security Gates',
+    description: 'Durable trellis and security gates to protect your home or business without compromising on style.',
+    features: ['Retractable trellis gates', 'Slamlock', 'Burglar guards', 'Custom gate designs'],
+    image: '/images/security-gates/trellis-gate-patio.jpg',
+  },
+  {
+    slug: 'burglar-bars-enclosures',
+    name: 'Burglar Bars & Enclosures',
+    category: 'Glass & Aluminium',
+    description: 'Aluminium enclosures and burglar bars that add security and living space, sea views included.',
+    features: ['Balcony enclosures', 'Sunroom enclosures', 'Burglar bars', 'Corrosion-resistant finish'],
+    image: '/images/glass-aluminium/doors-enclosures/enclosure-sea-view.jpg',
+  },
+]
+
+export type Project = {
+  slug: string
+  title: string
+  category: string
+  location: string
+  description: string
+  image: string
+  secondImage?: string
+}
+
+export const projects: Project[] = [
+  {
+    slug: 'sea-view-glass-enclosure',
+    title: 'Sea View Glass Enclosure',
+    category: 'Glass & Aluminium',
+    location: 'Coastal KZN',
+    description:
+      'A full aluminium and glass enclosure added to an existing patio, opening up uninterrupted sea views while keeping the space usable in any weather.',
+    image: '/images/glass-aluminium/doors-enclosures/enclosure-sea-view.jpg',
+  },
+  {
+    slug: 'full-bathroom-renovation',
+    title: 'Full Bathroom Renovation',
+    category: 'Building Renovations',
+    location: 'KwaZulu-Natal',
+    description:
+      'A dated bathroom stripped back and rebuilt with new tiling, a corner bath, vanity, and finishes from concept to completion.',
+    image: '/images/bathrooms/bathroom-before.jpg',
+    secondImage: '/images/bathrooms/bathroom-after.jpg',
+  },
+  {
+    slug: 'shopfront-glass-replacement',
+    title: 'Shopfront Glass Replacement',
+    category: 'Glass & Aluminium',
+    location: 'KZN Retail Centre',
+    description:
+      'Emergency same-day glass replacement for a busy retail shopfront, minimising downtime and keeping the store secure and trading.',
+    image: '/images/glass-aluminium/shopfronts/shopfront-before-broken.jpg',
+    secondImage: '/images/glass-aluminium/shopfronts/shopfront-after-repaired.jpg',
+  },
+  {
+    slug: 'double-storey-renovation',
+    title: 'Double-Storey Renovation',
+    category: 'Building Renovations',
+    location: 'KwaZulu-Natal',
+    description:
+      'A ground-up double-storey renovation and extension, managed from structural work through to final finishes by one team.',
+    image: '/images/renovations/house-under-construction.jpg',
+  },
+  {
+    slug: 'patio-security-upgrade',
+    title: 'Patio Security Upgrade',
+    category: 'Security Gates',
+    location: 'KwaZulu-Natal',
+    description:
+      'Custom trellis security gates installed across a home patio, adding protection without blocking light or airflow.',
+    image: '/images/security-gates/trellis-gate-patio.jpg',
+  },
+  {
+    slug: 'water-tank-installation',
+    title: 'JoJo Water Tank Installation',
+    category: 'Plumbing',
+    location: 'KwaZulu-Natal',
+    description:
+      'Supply and installation of a JoJo water tank with full plumbing connections for reliable backup water storage.',
+    image: '/images/plumbing/jojo-tank-installed.jpg',
+    secondImage: '/images/plumbing/tank-delivery-truck.jpg',
+  },
+]
+
 export type GalleryImage = {
   src: string
   category: string

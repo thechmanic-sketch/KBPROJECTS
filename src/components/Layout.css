@@ -163,6 +163,8 @@
   justify-content: center;
   align-items: center;
   gap: 32px;
+  padding: 90px 24px 24px;
+  overflow-y: auto;
   transform: translateY(-100%);
   opacity: 0;
   visibility: hidden;
