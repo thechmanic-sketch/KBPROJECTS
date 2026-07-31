@@ -1,6 +1,8 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { company } from '../data/company'
 import { asset } from '../lib/asset'
+import { getLenis } from '../lib/lenis'
 import SiteEffects from './SiteEffects'
 import CustomCursor from './CustomCursor'
 import './Layout.css'
@@ -15,6 +17,24 @@ const navLinks = [
 ]
 
 function Layout() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location.pathname])
+
+  useEffect(() => {
+    document.body.classList.toggle('menu-open', menuOpen)
+    const lenis = getLenis()
+    if (!lenis) return
+    if (menuOpen) {
+      lenis.stop()
+    } else {
+      lenis.start()
+    }
+  }, [menuOpen])
+
   return (
     <div className="site">
       <SiteEffects />
@@ -48,7 +68,37 @@ function Layout() {
         <a className="nav-cta" href={`tel:${company.phoneHref}`}>
           {company.phone}
         </a>
+        <button
+          type="button"
+          className={menuOpen ? 'menu-toggle open' : 'menu-toggle'}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </header>
+
+      <div className={menuOpen ? 'mobile-nav open' : 'mobile-nav'}>
+        <nav>
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.end}
+              className={({ isActive }) => (isActive ? 'mobile-nav-link active' : 'mobile-nav-link')}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
+        <a className="btn btn-primary mobile-nav-cta" href={`tel:${company.phoneHref}`}>
+          Call {company.phone}
+        </a>
+      </div>
 
       <main>
         <Outlet />
