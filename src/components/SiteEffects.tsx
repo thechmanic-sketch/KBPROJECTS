@@ -30,6 +30,8 @@ function SiteEffects() {
   }, [])
 
   useEffect(() => {
+    if (window.matchMedia('(pointer: coarse)').matches) return
+
     function onMove(event: MouseEvent) {
       const target = (event.target as HTMLElement)?.closest?.(
         '.btn',
@@ -53,6 +55,8 @@ function SiteEffects() {
   }, [])
 
   useEffect(() => {
+    if (window.matchMedia('(pointer: coarse)').matches) return
+
     function onMove(event: MouseEvent) {
       const target = (event.target as HTMLElement)?.closest?.(TILT_SELECTOR) as HTMLElement | null
       if (!target) return
