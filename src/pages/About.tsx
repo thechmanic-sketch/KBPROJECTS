@@ -3,6 +3,7 @@ import { company, sellingPoints, siteStats } from '../data/company'
 import Reveal from '../components/Reveal'
 import StatCounter from '../components/StatCounter'
 import PageHero from '../components/PageHero'
+import PointsStrip from '../components/PointsStrip'
 import { asset } from '../lib/asset'
 import './About.css'
 
@@ -64,12 +65,8 @@ function About() {
         <div className="container">
           <p className="eyebrow">Why Choose Us</p>
           <h2>Quality Workmanship You Can Trust</h2>
-          <ul className="about-points">
-            {sellingPoints.map((point) => (
-              <li key={point}>{point}</li>
-            ))}
-          </ul>
         </div>
+        <PointsStrip items={sellingPoints} />
       </section>
 
       <section className="section-alt">

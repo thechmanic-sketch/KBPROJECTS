@@ -1,6 +1,8 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import { company } from '../data/company'
 import { asset } from '../lib/asset'
+import SiteEffects from './SiteEffects'
+import CustomCursor from './CustomCursor'
 import './Layout.css'
 
 const navLinks = [
@@ -15,6 +17,18 @@ const navLinks = [
 function Layout() {
   return (
     <div className="site">
+      <SiteEffects />
+      <CustomCursor />
+      <div className="grain-overlay" aria-hidden="true" />
+      <div className="site-topbar">
+        <div className="site-topbar-inner">
+          <span>Servicing {company.area}</span>
+          <div className="site-topbar-links">
+            <a href={`tel:${company.phoneHref}`}>{company.phone}</a>
+            <a href={`mailto:${company.email}`}>{company.email}</a>
+          </div>
+        </div>
+      </div>
       <header className="site-header">
         <NavLink to="/" className="brand" end>
           <img src={asset('/images/brand/kb-logo.png')} alt={company.name} className="brand-logo" />

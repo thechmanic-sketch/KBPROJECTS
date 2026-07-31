@@ -6,6 +6,7 @@ import StatCounter from '../components/StatCounter'
 import Accordion from '../components/Accordion'
 import SpotlightSlider from '../components/SpotlightSlider'
 import HeroSlider from '../components/HeroSlider'
+import PointsStrip from '../components/PointsStrip'
 import { asset } from '../lib/asset'
 import './Home.css'
 
@@ -294,16 +295,7 @@ function Home() {
       </section>
 
       <section className="selling-points section-alt">
-        <div className="container">
-          <Reveal as="div" className="points-grid" stagger>
-            {sellingPoints.map((point) => (
-              <div className="point-card" key={point}>
-                <span className="point-check">✓</span>
-                <span>{point}</span>
-              </div>
-            ))}
-          </Reveal>
-        </div>
+        <PointsStrip items={sellingPoints} />
       </section>
 
       <section className="services-preview">

@@ -4,6 +4,29 @@
   min-height: 100vh;
 }
 
+.site-topbar {
+  background: var(--color-black);
+  color: #c9ccd0;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.site-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 32px;
+}
+
+.site-topbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.site-topbar-links a:hover {
+  color: var(--color-orange);
+}
+
 .site-header {
   display: flex;
   align-items: center;
@@ -98,5 +121,14 @@
 @media (max-width: 860px) {
   .site-nav {
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-topbar-inner span {
+    display: none;
+  }
+  .site-topbar-inner {
+    justify-content: center;
   }
 }
