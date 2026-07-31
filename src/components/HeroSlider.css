@@ -77,21 +77,3 @@
     animation: none;
   }
 }
-
-@media (pointer: coarse) {
-  .hero-slider {
-    perspective: none;
-  }
-  .hero-slider-stage {
-    transform-style: flat;
-  }
-  .hero-slide {
-    transform: none !important;
-    box-shadow: none;
-    will-change: auto;
-    transition: opacity 0.4s ease;
-  }
-  .hero-slide img {
-    animation: none;
-  }
-}

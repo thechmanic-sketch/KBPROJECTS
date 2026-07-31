@@ -88,12 +88,6 @@
   }
 }
 
-@media (pointer: coarse) {
-  .page-hero-photo {
-    animation: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .page-hero-photo {
     animation: none;
