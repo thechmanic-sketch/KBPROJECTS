@@ -3,6 +3,7 @@
   color: var(--color-white);
   background: var(--color-black);
   padding-bottom: 64px;
+  overflow: hidden;
 }
 
 .hero-top {
@@ -57,15 +58,10 @@
 .hero-photo-wrap {
   position: relative;
   margin-left: 26%;
-  overflow: hidden;
-}
-
-.hero-photo {
-  width: 100%;
+  margin-right: 60px;
   height: 46vh;
   min-height: 320px;
-  object-fit: cover;
-  display: block;
+  overflow: visible;
 }
 
 .hero-cta-row {

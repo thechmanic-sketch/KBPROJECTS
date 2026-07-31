@@ -5,8 +5,17 @@ import Reveal from '../components/Reveal'
 import StatCounter from '../components/StatCounter'
 import Accordion from '../components/Accordion'
 import SpotlightSlider from '../components/SpotlightSlider'
+import HeroSlider from '../components/HeroSlider'
 import { asset } from '../lib/asset'
 import './Home.css'
+
+const heroSlides = [
+  { src: '/images/renovations/house-under-construction.jpg', alt: 'Double-storey renovation under construction' },
+  { src: '/images/glass-aluminium/doors-enclosures/enclosure-sea-view.jpg', alt: 'Sea view glass enclosure' },
+  { src: '/images/bathrooms/bathroom-after.jpg', alt: 'Completed bathroom renovation' },
+  { src: '/images/security-gates/trellis-gate-patio.jpg', alt: 'Patio security trellis gate' },
+  { src: '/images/glass-aluminium/shopfronts/shopfront-after-repaired.jpg', alt: 'Repaired shopfront glazing' },
+]
 
 const projectSpotlights = [
   {
@@ -98,11 +107,7 @@ function Home() {
           <div className="hero-arc" />
         </div>
         <div className="hero-photo-wrap">
-          <img
-            className="hero-photo"
-            src={asset('/images/renovations/house-under-construction.jpg')}
-            alt="KB Projects team at work on a renovation"
-          />
+          <HeroSlider slides={heroSlides} />
         </div>
         <div className="container hero-cta-row">
           <Link to="/contact" className="btn btn-primary">Get a Free Quote</Link>
