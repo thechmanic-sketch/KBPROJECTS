@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { company } from '../data/company'
 import { asset } from '../lib/asset'
 import { getLenis } from '../lib/lenis'
@@ -107,18 +107,46 @@ function Layout() {
       </main>
 
       <footer className="site-footer">
-        <div className="footer-brand">
-          <img src={asset('/images/brand/kb-logo.png')} alt={company.name} className="footer-logo" />
+        <div className="footer-top container">
+          <div className="footer-brand-col">
+            <div className="footer-logo-box">
+              <img src={asset('/images/brand/kb-logo.png')} alt={company.name} className="footer-logo" />
+            </div>
+            <p>{company.subTagline}</p>
+          </div>
+
+          <div className="footer-col">
+            <p className="footer-col-title">Quick Links</p>
+            {navLinks
+              .filter((link) => link.to !== '/')
+              .map((link) => (
+                <NavLink key={link.to} to={link.to} className="footer-link">
+                  {link.label}
+                </NavLink>
+              ))}
+          </div>
+
+          <div className="footer-col">
+            <p className="footer-col-title">Get In Touch</p>
+            <p className="footer-col-text">
+              Free quotes on every project &mdash; reach out and we&apos;ll get back to you shortly.
+            </p>
+            <Link to="/contact" className="footer-cta-link">&rarr; Request a Quote</Link>
+          </div>
+
+          <div className="footer-col">
+            <p className="footer-col-title">Contact Details</p>
+            <a className="footer-link" href={`tel:${company.phoneHref}`}>{company.phone}</a>
+            <a className="footer-link" href={`mailto:${company.email}`}>{company.email}</a>
+            <span className="footer-link footer-link-static">Servicing {company.area}</span>
+          </div>
         </div>
-        <p>{company.subTagline}</p>
-        <div className="footer-contact">
-          <a href={`tel:${company.phoneHref}`}>{company.phone}</a>
-          <a href={`mailto:${company.email}`}>{company.email}</a>
-          <span>Servicing {company.area}</span>
+
+        <div className="footer-bottom container">
+          <p className="footer-copyright">
+            &copy; {new Date().getFullYear()} {company.name}. All rights reserved.
+          </p>
         </div>
-        <p className="footer-copyright">
-          &copy; {new Date().getFullYear()} {company.name}. All rights reserved.
-        </p>
       </footer>
     </div>
   )
