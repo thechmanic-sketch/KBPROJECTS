@@ -57,11 +57,7 @@ function HeroSlider({ slides }: { slides: Slide[] }) {
               onClick={() => goTo(index)}
               aria-label={`Show slide: ${slide.alt}`}
             >
-              <img
-                src={asset(slide.src)}
-                alt={slide.alt}
-                style={{ animationPlayState: offset === 0 ? 'running' : 'paused' }}
-              />
+              <img src={asset(slide.src)} alt={slide.alt} />
             </button>
           )
         })}
