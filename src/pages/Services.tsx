@@ -4,6 +4,7 @@ import { services, company } from '../data/company'
 import Reveal from '../components/Reveal'
 import PageHero from '../components/PageHero'
 import { asset } from '../lib/asset'
+import { getLenis } from '../lib/lenis'
 import './Services.css'
 
 function Services() {
@@ -12,7 +13,13 @@ function Services() {
   useEffect(() => {
     if (!hash) return
     const target = document.getElementById(hash.slice(1))
-    target?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (!target) return
+    const lenis = getLenis()
+    if (lenis) {
+      lenis.scrollTo(target, { offset: -20 })
+    } else {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   }, [hash])
 
   return (
